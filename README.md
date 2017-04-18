@@ -51,14 +51,13 @@ git commit ./my-dir/my-file.txt -m "create my file"
 
 Push to GitHub (remote)
 ```
-git pull origin my-feature
 git push origin my-feature
 ```
 
 Merge your work into master branch (local) Only do this when work is production ready.
 ```
 git checkout master
-git merge dev
+git merge my-feature
 ```
 
 Push to GitHub (remote)
@@ -72,3 +71,4 @@ Delete feature branch
 git branch -d my-feature
 git branch -d origin my-feature
 ```
+The last command (to delete branch on github) will not work. Look up stackoverflow. 
