@@ -49,8 +49,26 @@ git add ./my-dir/my-file.txt
 git commit ./my-dir/my-file.txt -m "create my file"
 ```
 
-Merge your work into master branch (only do this when work is production ready)
+Push to GitHub (remote)
+```
+git pull origin my-feature
+git push origin my-feature
+```
+
+Merge your work into master branch (local) Only do this when work is production ready.
 ```
 git checkout master
 git merge dev
+```
+
+Push to GitHub (remote)
+```
+git pull origin master
+git push origin master
+```
+
+Delete feature branch
+```
+git branch -d my-feature
+git branch -d origin my-feature
 ```
