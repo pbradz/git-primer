@@ -1,5 +1,5 @@
 # git-primer ([cheatsheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf), [docs](https://git-scm.com/docs))
-Git is a technology that allows you to efficiently save and manage multiple versions of the code for a project. The collection of different versions is called a repository, and multiple users can each have their own repository for the same project. Each repository can serve as a source from which other repositories can pull and a destination to which other repositories can push -- it's distributed. Many sites host git repositories and add a web-based interface, such as GitHub and Bitbucket and GitLab.
+Git is a technology that allows you to efficiently save and manage multiple versions of the code for a project. The collection of different versions is called a repository, and multiple users can each have their own repository for the same project. Each repository can serve as a source from which other repositories can pull and a destination to which other repositories can push -- it's distributed. Many sites host git repositories and add a web-based interface, such as GitHub and Bitbucket and GitLab. This primer is focused on using git from the command line, but some people use a GUI ([example](https://desktop.github.com/)).
 
 ## Get Started (First Time)
 
@@ -51,15 +51,36 @@ git pull origin my-feature
 
 If someone else was working on the branch, you may need to merge their work with yours. Git gives you many different options for doing this, but most often, you can just use this procedure:
 
-```
+```bash
 git mergetool
 ```
+
+Select your preferred tool and complete the merge. If you select, Opendiff, just use the GUI and save your merge. If you select Vim, follow these instructions:
+
+>> ----------------------------------------
+>> |            |            |            |
+>> |   LOCAL    |    BASE    |   REMOTE   |
+>> |            |            |            |
+>> ----------------------------------------
+>> |                                      |
+>> |                 MERGED               |
+>> |                                      |
+>> ----------------------------------------
+>> 
+>> Use `]c` to jump to the next difference. Then get version from one of the three options above:
+>> * `:diffget LO`
+>> * `:diffget BA`
+>> * `:diffget RE`
+>> 
+>> When complete, save and exit with `:wqa`.
+
+Commit your merge (if you needed to merge) and push to GitHub:
 
 ```bash
 git push origin my-feature
 ```
 
-Merge your work into master branch (local). Only do this when work is production ready.
+When your changes are production ready, merge your work into your local master branch.
 ```bash
 git checkout master
 git merge my-feature
@@ -71,7 +92,7 @@ git pull origin master
 git push origin master
 ```
 
-Delete feature branch.
+Delete feature branch both locally and at GitHub.
 ```bash
 git branch -d my-feature
 git push origin -d my-feature
