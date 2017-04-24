@@ -57,6 +57,7 @@ git mergetool
 
 Select your preferred tool and complete the merge. If you select, Opendiff, just use the GUI and save your merge. If you select Vim, follow these instructions:
 
+>>```
 >> ----------------------------------------
 >> |            |            |            |
 >> |   LOCAL    |    BASE    |   REMOTE   |
@@ -66,7 +67,8 @@ Select your preferred tool and complete the merge. If you select, Opendiff, just
 >> |                 MERGED               |
 >> |                                      |
 >> ----------------------------------------
->> 
+>> ```
+>>
 >> Use `]c` to jump to the next difference. Then get version from one of the three options above:
 >> * `:diffget LO`
 >> * `:diffget BA`
