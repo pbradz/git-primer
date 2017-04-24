@@ -1,4 +1,5 @@
-# git-primer
+# git-primer ([cheatsheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf), [docs](https://git-scm.com/docs))
+Git is a technology that allows you to efficiently save and manage multiple versions of the code for a project. The collection of different versions is called a repository, and multiple users can each have their own repository for the same project. Each repository can serve as a source from which other repositories can pull and a destination to which other repositories can push -- it's distributed. Many sites host git repositories and add a web-based interface, such as GitHub and Bitbucket and GitLab.
 
 ## Get Started (First Time)
 
@@ -7,10 +8,10 @@ git config --global user.name "Jay Doe"
 git config --global user.email jdoe@example.org
 ```
 
-## Create a GitHub Repo
+## Create a Repo (GitHub)
 Visit the [Gladstone Institutes group](https://github.com/gladstone-institutes) and click the green "New" button. Fill out the forms, and you'll get a page with instructions on how to create a new repository on the command line, push an existing repository from the command line or import code from a non-git repository.
 
-## Clone a GitHub Repo
+## Clone a Repo (GitHub)
 Visit the desired repository, e.g., [git-primer](https://github.com/gladstone-institutes/git-primer), and click the green "Clone or download" button. Copy the URL, e.g., `https://github.com/gladstone-institutes/git-primer.git`, to your clipboard. Then open your terminal to create and enter the repository from the command line:
 
 ```bash
@@ -25,9 +26,10 @@ Check status.
 git status
 ```
 
-Create a new branch named `my-feature`. (Good idea to keep your active development in a separate branch from master so that master is always in the last known good state.)
+Create a new branch named `my-feature` and push it to GitHub. It's a good idea to keep your active development in a separate branch from master so that master is always in the last known good state.
 ```bash
 git checkout -b my-feature
+git push origin my-feature
 ```
 
 Make some changes.
@@ -42,7 +44,17 @@ git add ./my-dir/my-file.txt
 git commit ./my-dir/my-file.txt -m "create my file"
 ```
 
-Push to GitHub (remote)
+Sync with GitHub (remote).
+```bash
+git pull origin my-feature
+```
+
+If someone else was working on the branch, you may need to merge their work with yours. Git gives you many different options for doing this, but most often, you can just use this procedure:
+
+```
+git mergetool
+```
+
 ```bash
 git push origin my-feature
 ```
