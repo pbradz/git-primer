@@ -57,24 +57,24 @@ git mergetool
 
 Select your preferred tool and complete the merge. If you select, Opendiff, just use the GUI and save your merge. If you select Vim, follow these instructions:
 
->>```
->> ----------------------------------------
->> |            |            |            |
->> |   LOCAL    |    BASE    |   REMOTE   |
->> |            |            |            |
->> ----------------------------------------
->> |                                      |
->> |                 MERGED               |
->> |                                      |
->> ----------------------------------------
->> ```
->>
->> Use `]c` to jump to the next difference. Then get version from one of the three options above:
->> * `:diffget LO`
->> * `:diffget BA`
->> * `:diffget RE`
->> 
->> When complete, save and exit with `:wqa`.
+>```
+> ----------------------------------------
+> |            |            |            |
+> |   LOCAL    |    BASE    |   REMOTE   |
+> |            |            |            |
+> ----------------------------------------
+> |                                      |
+> |                 MERGED               |
+> |                                      |
+> ----------------------------------------
+>```
+>
+> Use `]c` to jump to the next difference. Then get version from one of the three options above:
+> * `:diffget LO`
+> * `:diffget BA`
+> * `:diffget RE`
+> 
+> When complete, save and exit with `:wqa`.
 
 Commit your merge (if you needed to merge) and push to GitHub:
 
