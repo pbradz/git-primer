@@ -28,7 +28,7 @@ git status
 
 Create a new branch named `my-feature` and push it to GitHub. It's a good idea to keep your active development in a separate branch from master so that master is always in the last known good state.
 ```bash
-git checkout -b my-feature
+git checkout -b my-feature1
 git push origin my-feature
 ```
 
