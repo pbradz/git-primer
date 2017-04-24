@@ -20,23 +20,23 @@ cd git-primer
 
 ## Work with Git
 
-Check status
+Check status.
 ```bash
 git status
 ```
 
-Create a new branch named `my-feature`. (Good idea to keep your active development in a separate branch from master so that master is always in the last known good state and production ready.)
+Create a new branch named `my-feature`. (Good idea to keep your active development in a separate branch from master so that master is always in the last known good state.)
 ```bash
 git checkout -b my-feature
 ```
 
-Make some changes
+Make some changes.
 ```bash
 mkdir my-dir
 touch my-dir/my-file.txt
 ```
 
-Commit your work (do this often)
+Commit your work (do this often).
 ```bash
 git add ./my-dir/my-file.txt
 git commit ./my-dir/my-file.txt -m "create my file"
@@ -53,15 +53,14 @@ git checkout master
 git merge my-feature
 ```
 
-Push to GitHub (remote)
+Push to GitHub (remote).
 ```bash
 git pull origin master
 git push origin master
 ```
 
-Delete feature branch
+Delete feature branch.
 ```bash
 git branch -d my-feature
-git branch -d origin my-feature
+git push origin -d my-feature
 ```
-The last command (to delete branch on github) will not work. Look up stackoverflow. 
